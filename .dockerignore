@@ -1,0 +1,11 @@
+__pycache__
+
+.dockerignore
+.virtualenv
+.gitignore
+.pylintrc
+.style.yapf
+dev-requirements.txt
+Dockerfile
+README.md
+setup.sh
