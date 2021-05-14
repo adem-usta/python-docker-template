@@ -4,7 +4,7 @@ RUN adduser -D python
 
 WORKDIR /src
 
-COPY ./requirements.txt /requirements.txt
+COPY ./requirements/requirements.txt /requirements.txt
 
 RUN pip install --user --upgrade pip && \
     pip install --user -r /requirements.txt
@@ -17,11 +17,10 @@ FROM app AS tests
 
 WORKDIR /
 
-COPY ./tests-requirements.txt /tests-requirements.txt
+COPY ./requirements/tests-requirements.txt /tests-requirements.txt
 
 RUN pip install --user -r /tests-requirements.txt
 
 COPY ./tests /tests
-COPY ./.coveragerc /.coveragerc
 
-CMD ["python", "-m", "pytest", "--cov=src", "tests"]
+CMD ["python", "-m", "pytest", "--cov=src", "--cov-config=/tests/.coveragerc", "tests"]
