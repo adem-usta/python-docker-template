@@ -1,4 +1,9 @@
-# Python application boilerplate
+<h1 align="center">Python app boilerplate
+
+![Python Logo](assets/python.png)
+![Docker Logo](assets/docker.png)
+
+</h1>
 
 ## Introduction
 
@@ -10,33 +15,44 @@ It is dockerized, with a minimal base image to reduce its size to the vital mini
 
 ## Features
 
-Easy to develop on with development helpers:
+- Easy to develop on with development helpers:
 
-- `pylint`: to help you write pythonic code.
-- `yapf`: to help you format your code.
-- `mypy`: to help you write python code with typings.
+  - `pylint`: to help you write pythonic code.
+  - `yapf`: to help you format your code.
+  - `mypy`: to help you write python code with typings.
 
-Easy to test with the help of some tools:
+- Easy to test with the help of some tools:
 
-- TO DEFINE
+  - `pytest`: to test your app with unit tests.
+  - `pytest-cov`: to check your tests coverage.
 
-Easy to deploy, as it is dockerized.
+- Easy to deploy with the help of docker.
 
 ## Development
 
 In order to develop you service in optimal conditions (linting, autocomplete, etc),
-you need to setup your environment.
+you need to setup a virtual environment and install all the packages you need:
 
-Just run `./setup.sh` and you're good to go !
+- Run `./scripts/setup.sh` to create the virtual environment and install packages
+- In your shell, activate the virtual env: `source .virtualenv/bin/activate`
 
-In your current shell, you just need to activate your virtual environment if you want to launch your application locally, without using docker:
+If you're using `vscode`, a setting file is provided to use the virtual environment.
 
-`source .virtualenv/bin/activate`
+You need to install the official Python extension to get the best of your IDE.
 
-## Build your image
+## Docker image
 
-Just run `docker build -t <YOUR_IMAGE_NAME>:<YOUR_TAG> .`
+The provided Dockerfile aims to facilitate the deployment of your application with docker.
 
-## Test your application
+It contains two stages:
 
-TODO
+- `app`: contains the package the app needs to run.
+- `tests`: based on `app`, contains also the tests packages and sources, to let your run unit tests inside the container.
+
+### Build the app
+
+Run `docker build --tag=<YOUR_IMAGE_NAME:TAG> --target=app .`
+
+### Build with tests
+
+Run `docker build --tag=<YOUR_IMAGE_WITH_TESTS_NAME:TAG> --target=tests .`
