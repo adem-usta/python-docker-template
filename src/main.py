@@ -5,7 +5,7 @@ import asyncio
 from utils.functions import addition
 
 
-async def main():
+async def main() -> None:
     """Main coroutine
     """
     print("Hello, World !")
