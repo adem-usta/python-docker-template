@@ -1,2 +1,4 @@
 __pycache__
 .virtualenv
+.pytest_cache
+.coverage
