@@ -31,11 +31,3 @@ jobs:
     - name: Unit testing
       run: |
         python -m pytest --cov=src --cov-config=tests/.coveragerc tests
-    - uses: LouisBrunner/checks-action@v1.1.1
-      if: always()
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        name: Final Check
-        conclusion: ${{ job.status }}
-        output: |
-          {"summary":${{ steps.test.outputs.summary }}}
