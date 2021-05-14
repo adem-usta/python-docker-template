@@ -1,4 +1,4 @@
-name: "Python: Linting - Formatting - Unit Testing"
+name: "Python: Linting - Type Checking - Formatting - Unit Testing"
 
 on:
   push:
@@ -23,10 +23,13 @@ jobs:
         pip install -r requirements/requirements.txt
         pip install -r requirements/tests-requirements.txt
         pip install -r requirements/dev-requirements.txt
-    - name: Lint src and tests directories with pylint
+    - name: Linting
       run: |
         python -m pylint src/
         python -m pylint tests/
-    - name: Test with pytest
+    - name: Type checking
+      run: |
+        python -m mypy src/
+    - name: Unit testing
       run: |
         python -m pytest --cov=src --cov-config=tests/.coveragerc tests
