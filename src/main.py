@@ -9,7 +9,7 @@ async def main() -> None:
     """Main coroutine
     """
     print("Hello, World !")
-    x, y = 10, 20
+    x, y = "lol", "mdr"
     result = addition(x, y)
     print(f"{x} + {y} = {result}")
 
