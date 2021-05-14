@@ -52,19 +52,16 @@ Run `python -m pytest --cov=src --cov-config=tests/.coveragerc tests`
 
 The provided Dockerfile aims to facilitate the deployment of your application with docker.
 
-It contains two stages:
+### Build the app locally
 
-- `app`: contains the package the app needs to run.
-- `tests`: based on `app`, contains also the tests packages and sources, to let your run unit tests inside the container.
-
-### Build the app
-
-Run `docker build --tag=<YOUR_IMAGE_NAME:TAG> --target=app .`
-
-### Build with tests
-
-Run `docker build --tag=<YOUR_IMAGE_WITH_TESTS_NAME:TAG> --target=tests .`
+Run `docker build --tag=<YOUR_IMAGE_NAME:TAG> .`
 
 ## Github Actions
 
-Under construction ...
+GitHub Actions lets you design specific workflows according to your needs.
+
+In this template, some workflows are provided to you:
+
+- python-app: checks for pylint mark, code formatting and unit tests.
+
+Feel free to add more workflows according to your needs.
