@@ -40,6 +40,14 @@ If you're using `vscode`, a setting file is provided to use the virtual environm
 
 You need to install the official Python extension to get the best of your IDE.
 
+### Run the app locally
+
+Run `python src/main.py` in your shell with activated virtual environment.
+
+## Run tests locally
+
+Run `python -m pytest --cov=src --cov-config=tests/.coveragerc tests`
+
 ## Docker image
 
 The provided Dockerfile aims to facilitate the deployment of your application with docker.
@@ -56,3 +64,7 @@ Run `docker build --tag=<YOUR_IMAGE_NAME:TAG> --target=app .`
 ### Build with tests
 
 Run `docker build --tag=<YOUR_IMAGE_WITH_TESTS_NAME:TAG> --target=tests .`
+
+## Github Actions
+
+Under construction ...
