@@ -1,6 +1,6 @@
 FROM python:3.9-alpine
 
-RUN adduser -D python
+RUN adduser -D worker
 
 WORKDIR /src
 
