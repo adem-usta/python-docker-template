@@ -1,8 +1,10 @@
-<h1 align="center">Python app boilerplate
+<p align="center">
+  <img src="assets/python.png">
+  <img src="assets/docker.png">
+</p>
 
-![Python Logo](assets/python.png)
-![Docker Logo](assets/docker.png)
-
+<h1 align="center">
+  Python application boilerplate
 </h1>
 
 ## Introduction
