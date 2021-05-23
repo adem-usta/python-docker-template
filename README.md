@@ -4,7 +4,7 @@
 </p>
 
 <h1 align="center">
-  Python application boilerplate
+  Python application template
 </h1>
 
 ## Introduction
