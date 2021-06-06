@@ -37,11 +37,11 @@ You need to install the official Python extension to get the best of your IDE.
 
 ### Run the app locally
 
-Run `python src/main.py` in your shell with activated virtual environment.
+Run `python -m app` in your shell with activated virtual environment.
 
 ### Run tests locally
 
-Run `python -m pytest --cov=src --cov-config=tests/.coveragerc tests`
+Run `python -m pytest --cov=app --cov-report term-missing tests`
 
 ## Docker image
 
