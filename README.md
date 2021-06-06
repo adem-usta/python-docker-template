@@ -1,11 +1,4 @@
-<p align="center">
-  <img src="assets/python.png">
-  <img src="assets/docker.png">
-</p>
-
-<h1 align="center">
-  Python application template
-</h1>
+# Python application template
 
 ## Introduction
 
