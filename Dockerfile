@@ -9,6 +9,6 @@ COPY requirements/requirements.txt requirements.txt
 RUN pip install --user --upgrade pip && \
     pip install --user -r requirements.txt
 
-COPY src src
+COPY app app
 
-CMD ["python", "src/main.py"]
+CMD ["python", "-m", "app"]
