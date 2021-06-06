@@ -23,11 +23,12 @@ jobs:
         pip install -r requirements/dev-requirements.txt
     - name: Linting
       run: |
-        python -m pylint app/
-        python -m pylint tests/
+        python -m pylint --reports=n app
+        python -m pylint --reports=n tests
     - name: Type checking
       run: |
-        python -m mypy app/
+        python -m mypy app
+        python -m mypy tests
     - name: Unit testing
       run: |
-        python -m pytest --cov=app tests
+        python -m pytest --cov=app --cov-report term-missing tests
