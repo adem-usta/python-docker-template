@@ -23,11 +23,11 @@ jobs:
         pip install -r requirements/dev-requirements.txt
     - name: Linting
       run: |
-        python -m pylint src/
+        python -m pylint app/
         python -m pylint tests/
     - name: Type checking
       run: |
-        python -m mypy src/
+        python -m mypy app/
     - name: Unit testing
       run: |
-        python -m pytest --cov=src --cov-config=tests/.coveragerc tests
+        python -m pytest --cov=app tests

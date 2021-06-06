@@ -1,6 +1,6 @@
 import pytest
 
-from src.utils.functions import addition
+from app.utils.functions import addition
 
 
 @pytest.mark.parametrize(['x', 'y', 'output'], [
