@@ -60,3 +60,7 @@ In this template, some workflows are provided to you:
 - python-app: checks for pylint mark, code formatting and unit tests.
 
 Feel free to add more workflows according to your needs.
+
+## Git Hooks
+
+To be filled ...
