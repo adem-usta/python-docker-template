@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+echo "Running pre-commit hook ..."
+
+source .virtualenv/bin/activate
+
+# Launch pylint on app
+lint_output=$(python -m pylint --reports=no --output-format=text app)
+lint_exit_code=$?
+
+if [ $lint_exit_code -eq 0 ]
+then
+  echo "Pylint - SUCCESS"
+else
+  echo "Pylint - FAIL: Check pylint output to see what's wrong below:"
+  echo "$lint_output"
+  exit $lint_exit_code
+fi
+
+
+# Launch mypy on app
+mypy_output=$(python -m mypy --show-column-numbers --no-color-output --no-error-summary --show-error-context app)
+mypy_exit_code=$?
+
+if [ $mypy_exit_code -eq 0 ]
+then
+  echo "Mypy   - SUCCESS"
+else
+  echo "Mypy   - FAIL: Check mypy output to see what's wrong:"
+  echo "$mypy_output"
+  exit $mypy_exit_code
+fi
+
+# Launch yapf diff on app
+yapf_output=$(python -m yapf --diff --recursive app)
+yapf_exit_code=$?
+
+if [ $yapf_exit_code -eq 0 ]
+then
+  echo "yapf   - SUCCESS"
+else
+  echo "yapf   - FAIL: Check yapf output to see what's wrong:"
+  echo "$yapf_output"
+  exit $yapf_exit_code
+fi
