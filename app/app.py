@@ -8,7 +8,7 @@ from app.utils.functions import addition
 async def main() -> None:
     """Main coroutine
     """
-    print("Hello, World !")
+    print("Hello, World ! This is a simple app.")
     print(f"Param A: {PARAM_A}")
     print(Misc)
 
